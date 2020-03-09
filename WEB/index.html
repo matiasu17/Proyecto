@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../../assets/favicon-2.png" type="image/x-icon">
+    <title>Web de Gifos</title>
+
+    <!-- estilos de el componente home -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+
+
+<!-- <body color-theme='Sailor-Night'> -->
+
+<body>
+    <!-- ************************************************header********************************************************** -->
+
+    <header class="header-general">
+        <h6>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 17.008.420</h6>
+    </header>
+
+    <!-- ************************************************barra de navegacion********************************************************** -->
+
+    <div class="nav-bar">
+        <div class="logo"><img id="logo" onclick="location.reload()" src="assets/gifOF_logo.png" alt="Logo de Gifos"></div>
+        <div class="bts-nav">
+            <button class="crearGif btn" id="upload">Crear Guifos</button>
+            <div class="dropDonwMenu">
+                <button onclick="openDorpDown()" onblur="closeDorpDown()" class="elegirTema btn">Elegir tema</button>
+                <ul class="menu" id="menu">
+                    <!-- <li><button class="btn" id="Sailor-Day">Sailor-Day</button></li> -->
+                    <li><button onclick="cambiarTema('Sailor-Day')" class="btn Sailor-Day">Sailor-Day</button></li>
+                    <!-- <li><button class=" btn" id="Sailor-Night">Sailor-Night</button></li> -->
+                    <li><button onclick="cambiarTema('Sailor-Night')" class="btn Sailor-Night">Sailor-Night</button></li>
+                </ul>
+            </div>
+            <button onclick="openDorpDown()" onblur="closeDorpDown()" class="elegirTemaDrop btn"><img src="../../assets/dropdown.svg" alt=""></button>
+            <!-- <button class="misGif" id="misGif"> <a href="../mis-gif/mis-gif.html">Mis Guifos</a> </button> -->
+            <button class="misGif" id="misGif">Mis Guifos </button>
+        </div>
+
+    </div>
+    <!-- ************************************************barra de busqueda********************************************************** -->
+
+    <div class="barraBusqueda">
+        <div class="bus-head">Buscar</div>
+        <div class="buscarwrap">
+            <div class="inp-btn-x">
+
+                <input class="input" id="input" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+
+                <button class="btn-x" id="btn-x" onclick="resetBusqueda()" style="display:none;"><img src="../../assets/close-x.svg" alt=""></button>
+            </div>
+            <button class="btn buscar-btn" id="btn-buscar" disabled> <img class="lupa" src="../../assets/lupa.svg" alt=""> Buscar</button>
+        </div>
+
+        <div id="segbus-esc" class="dinamico">
+            <div class="segbus" id="segbus">
+                <!-- <button class="btn-bus-pre">Resultado de búsqueda sugerido</button> -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ************************************************resultados de la busqueda********************************************************** -->
+
+    <!-- botones con los ejemplos -->
+    <div class="dinamico" id="busqueda">
+        <div class="btn-suge" id="btn-suge-cont">
+            <button class="btn"># texto</button>
+            <button class="btn"># mas texto</button>
+            <button class="btn"># otro textoooooo</button>
+        </div>
+        <!-- cuado con el texto de la busqueda -->
+        <div class="barrratitulo  ">
+            <p id="tex-buscado"> la busqueda (resultados) </p>
+        </div>
+        <!-- galeria de gif buscados -->
+        <div class="">
+            <div class="galeriaGif" id="gridBusqueda"></div>
+        </div>
+    </div>
+
+
+    <!-- ************************************************sugerencias********************************************************** -->
+
+    <div class=" barrratitulo ">
+        <p> Hoy te sugerimos:</p>
+    </div>
+
+    <!-- galeria con la sugerencias -->
+    <div class="galeriaGif" id="sugerencias">
+    </div>
+    <!-- ************************************************tendencias********************************************************** -->
+
+    <div class=" barrratitulo ">
+        <p> Tendencias:</p>
+    </div>
+
+    <!-- galeria con la sugerencias -->
+    <div class="galeriaGif" id="tendencias">
+    </div>
+
+    
+
+    <div class="espacio"></div>
+
+    
+    <!-- ************************************************scrips********************************************************** -->
+
+    <!-- libreria de RecordRTC -->
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+
+    <script src="../../global-scrips/main.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
