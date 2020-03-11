@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mis Guifos</title>
+    <link rel="shortcut icon" href="../../assets/gif-mi.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="mis-gif.css">
+</head>
+
+<body>
+
+    <!-- **********************************************header principal************************************************************** -->
+
+    <header class="header-general">
+        <h6>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</h6>
+    </header>
+
+    <!-- **********************************************barra navegacion************************************************************** -->
+    <div class="nav-bar">
+        <div class="logo"><img id="logo" src="../../assets/gifOF_logo.png" alt="logo de la pagina"></div>
+        <div class="bts-nav">
+            <button class="crearGif btn" id="upload">Crear Guifos</button>
+            <div class="dropDonwMenu">
+                <button onclick="openDorpDown()" onblur="closeDorpDown()" class="elegirTema btn">Elegir tema</button>
+                <ul class="menu" id="menu">
+                    <!-- <li><button class="btn" id="Sailor-Day">Sailor-Day</button></li> -->
+                    <li><button onclick="cambiarTema('Sailor-Day')" class="btn Sailor-Day">Sailor-Day</button></li>
+                    <!-- <li><button class=" btn" id="Sailor-Night">Sailor-Night</button></li> -->
+                    <li><button onclick="cambiarTema('Sailor-Night')" class="btn Sailor-Night">Sailor-Night</button></li>
+                </ul>
+            </div>
+            <button onclick="openDorpDown()" onblur="closeDorpDown()" class="elegirTemaDrop btn"><img src="../../assets/dropdown.svg" alt=""></button>
+            <!-- <button class="misGif" id="misGif"> <a href="../mis-gif/mis-gif.html">Mis Guifos</a> </button> -->
+            <button class="misGif" id="misGif" onclick="location.reload()">Mis Guifos </button>
+        </div>
+
+    </div>
+    <!-- ************************************************mis-gif**************************************************** -->
+    <div class=" barrratitulo ">
+        <p> Mis guifos</p>
+    </div>
+
+    <!-- galeria  de mis gif -->
+    <div class="galeriaGif" id="gifSubidos">
+    </div>
+
+
+
+
+    <!-- ************************************************scrips**************************************************** -->
+
+    <script src="mis-gif.js"></script>
+    <!-- agregar uno general -->
+    <script src="../../global-scrips/main.js"></script>
+
+    <!-- ************************************************scrips**************************************************** -->
+</body>
+
+</html>

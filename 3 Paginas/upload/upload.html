@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Capturar </title>
+    <link rel="shortcut icon" href="../../assets/gir-record.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="upload.css">
+
+</head>
+
+<body>
+    <!-- ************************************************notificacion********************************************************** -->
+
+    <div class="dinamico" id="noticover">
+        <div class="notificacion" id="notifiupload">
+            <p>Enlace copiado con exito!!!</p>
+        </div>
+    </div>
+
+    <!-- ************************************************header********************************************************** -->
+
+    <header class="header-general">
+        <h6>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</h6>
+    </header>
+
+    <!-- ************************************************barra de navegacion********************************************************** -->
+
+    <div class="nav-bar">
+        <div class="logo">
+            <img class="flecha" id="flecha" src="../../assets/arrow.svg" alt="">
+            <img id="logo" src="../../assets/gifOF_logo.png" alt="logo de la pagina">
+        </div>
+
+
+    </div>
+    <!-- ************************************************cartel********************************************************** -->
+
+    <div class="cartel" id="cartel">
+        <div class="cartel-header">
+            <p>Crear Guifos</p>
+        </div>
+        <div class="cartel-titulo">
+            <img src="../../assets/windowimg.png" alt="">
+            <h5>Aquí podrás crear tus propios guifos</h5>
+        </div>
+        <div class="text-cuerpo">
+            <p>Crear tu <span>guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
+            <ul>
+                <li>
+                    <p><span>1)</span> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</p>
+                </li>
+                <li>
+                    <p><span>2)</span> Capturar tu momento guifo</p>
+                </li>
+                <li>
+                    <p><span>3)</span> Revisar el momento</p>
+                </li>
+                <li>
+                    <p><span>4)</span> Listo para subir y compartir!</p>
+                </li>
+                <li>
+                    <p>¿Quieres comenzar a crear tu <span>guifo</span> ahora?</p>
+                </li>
+            </ul>
+
+            <div class="borones-cartel">
+                <button class="btn-secondary " onclick='location.assign("../home/home.html")'>Cancelar</button>
+                <button class="btn" id="comenzar" onclick="vistaPreviaVideo()">Comenzar</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ************************************************cuadro de vista previa y  catura de video**************************************************** -->
+    <!-- este cuado no me muestra desde el principio , solo cuando es necesario -->
+
+    <div class="cartel dinamico" id="cartel-video">
+        <div class="cartel-header">
+            <p id="titulo-1" class="dinamico">Un Chequeo Antes de Empezar</p>
+            <p id="titulo-2" class="dinamico">Capturando Tu Guifo</p>
+            <p id="titulo-3" class="dinamico">Vista Previa</p>
+            <img id="cancelar" src="../../assets/buttonclose.svg" alt="">
+        </div>
+        <div class="marcoCamara">
+            <video id="video" class="video" autoplay></video>
+            <img src="../../assets/loanding.gif" id="videoGuardado" class="video dinamico" alt="">
+
+        </div>
+
+        <!-- foter con el boton que cominza la grabacion -->
+
+        <div id="foot-comenzar">
+            <div class="btns-video">
+                <div class="btngrupo">
+                    <button class="btn camara-btn"><img src="../../assets/camera.svg" alt=""></button>
+                    <button class="btn" id="btnStart">Capturar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- foter con el boton para terminar la grabacion -->
+
+        <div id="foot-parar" class="dinamico">
+            <div class="btns-video">
+
+                <div class="temporizador">
+                    <h2 class="tiempo" id="temporizadortag"> 00:00</h2>
+                </div>
+
+                <div class="btngrupo">
+                    <button class="btn-warm camara-btn "><img src="../../assets/recording.svg " alt=" "></button>
+                    <button class="btn-warm " id="btnStop">Listo</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- foter con el boton para retomar o subir la grabacion -->
+        <div id="foot-subir" class="dinamico">
+            <!-- <div id="foot-subir"> -->
+            <div class="btns-video">
+                <div class="temporizador">
+                    <h2 class="tiempo"> 00:00</h2>
+                </div>
+                <div class="conteprogresbar" id="conteprogresbar">
+                    <div class="pasonegativo">
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                        <div class="paso"></div>
+                    </div>
+                </div>
+                <div class="btngrupo">
+                    <button class="btn-secondary margin-izq-btn " onclick="recapturar()">Repetir Captura</button>
+                    <button class="btn" onclick="subirGif()">Subir Guifo</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- ************************************************cuadro de subida de video **************************************************** -->
+
+    <div class="cartel dinamico" id="cartel-subida">
+        <!-- cabezera -->
+        <div class="cartel-header">
+            <p>Subiendo Guifo</p>
+            <img onclick="cancelarSubida()" src="../../assets/buttonclose.svg" alt="">
+        </div>
+
+        <!-- ventana principal -->
+        <div class="marcoCamara cartelUpload">
+            <img src="../../assets/globe_img.png" alt="">
+
+            <span>Estamos subiendo tu guifo…</span>
+
+            <div class="conteprogresbar-subir" id="conteprogresbar-subir">
+                <div class="pasonegativo">
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                    <div class="paso"></div>
+                </div>
+            </div>
+
+            <p>Tiempo restante: 38 años algunos minutos</p>
+
+        </div>
+        <!-- botones de accion -->
+        <div class="btns-video">
+            <div class="btngrupo">
+                <button class="btn" onclick="cancelarSubida()">Cancelar</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- ************************************************pantalla de muestra y descarga**************************************************** -->
+
+
+    <div class="cartel dinamico" id="cartel-muestr-desc">
+        <!-- cabezera -->
+        <div class="cartel-header">
+            <p>Guifo Subido Con Éxito</p>
+            <img onclick="location.reload()" src="../../assets/buttonclose.svg" alt="">
+        </div>
+        <div class="img-cart-final">
+            <!-- ventana principal -->
+            <div class="marcoCamara gif-fin">
+                <img src="../../assets/loanding.gif" alt="" id="muestra-gif">
+            </div>
+
+            <div class="btns-extra">
+                <h2>Guifo creado con éxito</h2>
+                <button class="btn-secondary" id="btn-copiEnla">Copiar Enlace Guifo</button>
+                <button class="btn-secondary" onclick="descargarGif()">Descargar Guifo</button>
+            </div>
+
+        </div>
+
+        <!-- botones de accion -->
+        <div class="btns-video btn-final-foot">
+            <div class="btngrupo">
+                <button class="btn" onclick="terminadoElGif()">Listo</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ************************************************mis-gif**************************************************** -->
+    <div class="barrratitulo" id="barrratitulo">
+        <p> Mis guifos</p>
+    </div>
+
+    <!-- galeria  de mis gif -->
+    <div class="galeriaGif" id="misGif">
+    </div>
+
+    <!-- ************************************************scrips********************************************************** -->
+
+    <!-- libreria de RecordRTC -->
+    <!-- <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+
+    <!-- progresbar -->
+    <script src="../../global-scrips/progressbar.min.js"></script>
+
+    <script src="../../global-scrips/main.js "></script>
+    <script src="upload.js "></script>
+
+</body>
+
+</html>

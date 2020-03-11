@@ -1,0 +1,226 @@
+@import '../../styles/index.scss';
+//*******************************barra de navegacion*****************************************
+.logo {
+    @include flex-row;
+}
+
+.flecha {
+    margin-right: 20px;
+}
+
+.cartel {
+    padding: 2px;
+    background: var(--bg-frame);
+    box-shadow: inset -2px -2px 0 0 var(--bottom-frame-shadow), inset 2px 2px 0 0 var(--top-frame-shadow);
+    font-size: 14px;
+    color: var(--bts-border-clr);
+    letter-spacing: 0;
+    line-height: 20px;
+    width: 50vw;
+    // max-height: 50vh;
+    margin: 15vh auto;
+    span {
+        font-weight: bold;
+        color: black;
+    }
+}
+
+.cartel-header {
+    @include flex-row;
+    justify-content: space-between;
+    padding: 2px 8px 2px 5px;
+    background-image: var(--gradient-header);
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: bold;
+    height: 24px;
+}
+
+.cartel-titulo {
+    @include flex-row;
+    justify-content: flex-start;
+    margin: 30px 0px 7px 25px;
+    h5 {
+        margin-left: 16px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+}
+
+.text-cuerpo {
+    @include flex-colunm;
+    margin-left: 73px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 20px;
+    ul {
+        list-style: none;
+    }
+    li {
+        margin: 20px 0px;
+    }
+}
+
+//! borones-cartel y btns-video deverian ser la misma clase
+.borones-cartel {
+    width: 100%;
+    padding-right: 20px;
+    @include flex-row;
+    justify-content: flex-end;
+    button {
+        margin: 0px 16px 36px 0px;
+    }
+}
+
+.btns-video {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 21px 8px 16px 16px;
+}
+
+.btngrupo {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 3;
+}
+
+.margin-izq-btn {
+    margin-right: 14px;
+}
+
+.marcoCamara {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    margin: 8px 8px 0px 11px;
+    widows: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video {
+    padding: 2px;
+    margin-bottom: -6px;
+    width: 100%;
+    height: 100%;
+}
+
+.camara-btn {
+    width: fit-content;
+    margin: 0px;
+    padding: 0px 8px
+}
+
+.cartelUpload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 135px 0px;
+}
+
+.img-cart-final {
+    @include flex-row;
+    h2 {
+        font-family: $font-primary;
+        font-weight: bold;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+    .gif-fin {
+        width: 50%;
+        margin: 10px 24px 0px 24px;
+        min-height: fit-content;
+        img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: -5px;
+        }
+    }
+    .btns-extra {
+        width: 50%;
+        min-height: 90%;
+        padding: 29px 24px 0px 10px;
+        @include flex-colunm;
+        align-items: flex-start;
+        h2 {
+            margin: 0px 0px 16px;
+        }
+        button {
+            width: 100%;
+            margin-bottom: 14px;
+        }
+    }
+}
+
+.btn-final-foot {
+    padding: 30px 24px 22px 0px;
+}
+
+.temporizador {
+    grid-column: 1;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    height: 36px;
+    min-width: 60px;
+    @include flex-row;
+    h2 {
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-align: center;
+        font-weight: 300;
+    }
+}
+
+//cbarra de carga para lavista del gif 
+.conteprogresbar {
+    grid-column: 2;
+    position: relative;
+    height: 25px;
+    padding: 2px;
+    margin: 0px 10px;
+    background: #B4B4B4;
+    box-shadow: inset 2px 2px 0 0 #000000, inset -2px -2px 0 0 #FFFCFC;
+}
+
+//cbarra de carga para subida del gif 
+.conteprogresbar-subir {
+    @extend .conteprogresbar;
+    width: 80%;
+}
+
+.pasonegativo {
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+    margin: 2px;
+    @include flex-row;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.paso {
+    width: 3px;
+    height: 100%;
+    background-color: #B4B4B4;
+    margin-top: 0px;
+    // margin-left: 12px;
+    margin-left: 5%;
+}
